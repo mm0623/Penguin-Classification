@@ -16,22 +16,22 @@ Allow us, for a moment, to paint a picture. Imagine a world in which the populat
 
 As you can plainly see, the penguins are just precious (Adelie is the cutest), so it should be obvious why we seek to build a program that can help identify the different species. We will use different machine learning algorithms to develop our program by considering and selecting from the following features:
 
-* Sample number: the sample number
-* Species: the species of penguin
-* Region: the region the penguin was located in
-* Island: the island the penguin was located on
-* Stage: the life stage of the penguin
-* Individual ID: the ID
-* Clutch completion: the state of the penguin’s nest
-* Date egg: the date at which the eggs were 
-* Culmen length: the length of the culmen
-* Culmen depth: the depth of the culmen
-* Flipper length: the length of the flipper
-* Body mass: the mass of the penguin
-* Sex: the sex of the penguin
-* Delta 15 N: a measure of the ratio of the two stable isotopes of nitrogen
-* Delta 13 C: a measure of the ratio of the two stable isotopes of carbon
-* Comments: any additional comments by the researchers
+* `Sample number`: the sample number
+* `Species`: the species of penguin
+* `Region`: the region the penguin was located in
+* `Island`: the island the penguin was located on
+* `Stage`: the life stage of the penguin
+* `Individual ID`: the ID
+* `Clutch completion`: the state of the penguin’s nest
+* `Date egg`: the date at which the eggs were 
+* `Culmen length`: the length of the culmen
+* `Culmen depth`: the depth of the culmen
+* `Flipper length`: the length of the flipper
+* `Body mass`: the mass of the penguin
+* `Sex`: the sex of the penguin
+* `Delta 15 N`: a measure of the ratio of the two stable isotopes of nitrogen
+* `Delta 13 C`: a measure of the ratio of the two stable isotopes of carbon
+* `Comments`: any additional comments by the researchers
 
 <br>
 
@@ -54,15 +54,19 @@ Further data analysis is necessary in order to choose the best qualitative and t
 ### Figure 1: Penguins population for each species on each island.
 Firstly, a barplot can be used to evaluate the qualitative data in the penguins dataset. The graph above plots the amount of penguins which are present on each island, separated by species. From the graph we can see that Torgersen island only has Adelie penguins, while Gentoo penguins only live on Biscoe island and Chinstrap penguins only live on Dream island. In addition, there are more than twice as many Gentoo penguins than Adelie penguins on Biscoe island, while there are slightly more Chinstrap penguins than Adelie penguins on Dream island. This means that if an unknown penguin is identified on Biscoe island, it is significantly more likely that the penguin is a Gentoo penguin than an Adelie penguin. If the unknown penguin is identified on Dream island, it is slightly more likely to be a Chinstrap penguin than an Adelie penguin. Finally, if the unknown penguin is identified on Torgersen island, it must be an Adelie penguin.
 
-### Figure 2: Comparison between each species for every quantitative feature
-For the second figure, a box plot allows for clear analysis of the quantitative data. The graph shows the distribution of each feature for each respective species. The graph shows which features have outliers, simplifying the selection of features to use in the machine learning models. Looking at culmen length, the Adelie are considerably smaller than either the Chinstrap or the Gentoo. However, with culmen depth, it is the Gentoo who are shorter than either the Adelie or the Chinstrap. With respect to flipper length and body mass, the Gentoo are larger than the Adelie or the Chinstrap. For delta 15 N, Gentoo are the outlier (smaller), whereas for delta 13 C, it is the Chinstrap who are outliers (larger/less negative).
+![figure1](https://github.com/user-attachments/assets/260d9b97-64f1-426d-9277-8625f242ebcb)
 
-Explanation: between the two qualitative features in the penguins dataset, "Island" has a much stronger correlation to penguin species than "Sex" does. In the figure above, it is clear that Torgersen Island only has Adelie penguins, while Gentoo penguins only live on Biscoe Island and Chinstrap penguins only live on Dream Island.
+
+### Figure 2: Comparison between each species for every quantitative feature
+For the second figure, a box plot allows for clear analysis of the quantitative data. The graph shows the distribution of each feature for each respective species. The graph shows which features have outliers, simplifying the selection of features to use in the machine learning models. Looking at culmen length, the Adelie are considerably smaller than either the Chinstrap or the Gentoo. However, with culmen depth, it is the Gentoo who are shorter than either the Adelie or the Chinstrap. With respect to flipper length and body mass, the Gentoo are larger than the Adelie or the Chinstrap. For delta 15 N, Gentoo are the outlier (smaller), whereas for delta 13 C, it is the Chinstrap who are outliers (larger/less negative). Between the two qualitative features in the penguins dataset, "Island" has a much stronger correlation to penguin species than "Sex" does. In the figure above, it is clear that Torgersen Island only has Adelie penguins, while Gentoo penguins only live on Biscoe Island and Chinstrap penguins only live on Dream Island.
+
+![figure2](https://github.com/user-attachments/assets/f347ce57-170d-4597-b23e-d77e468b335e)
+
 
 ### Figure 3: Pairwise relationship between each quantitative feature
-Finally, scatterplots can be used to plot two different quantitative features together, in order to  cross-examine them to determine which two features give the most distinct species regions. Through visual analysis, "Culmen Length" and "Culmen Depth" are good indicators of species, as these graphs show distinct clusters for each species. “Body Mass” and “Flipper Length” plotted against “Culmen Length” also produce nice, distinct clusters. By comparison, “Flipper Length” plotted against “Culmen Depth” produces such overlap that the Adelie and Chinstrap species are practically indistinguishable.
+Finally, scatterplots can be used to plot two different quantitative features together, in order to  cross-examine them to determine which two features give the most distinct species regions. Through visual analysis, "Culmen Length" and "Culmen Depth" are good indicators of species, as these graphs show distinct clusters for each species. “Body Mass” and “Flipper Length” plotted against “Culmen Length” also produce nice, distinct clusters. By comparison, “Flipper Length” plotted against “Culmen Depth” produces such overlap that the Adelie and Chinstrap species are practically indistinguishable. In these graphs, two different quantitative features can be cross-examined to determine which give the most distinct species regions. Through visual analysis, "Culmen Length" and "Culmen Depth" shows the most separation between species.
 
-Explanation: In these graphs, two different quantitative features can be cross-examined to determine which give the most distinct species regions. Through visual analysis, "Culmen Length" and "Culmen Depth" shows the most separation between species.
+![figure3](https://github.com/user-attachments/assets/d40108de-d8b3-4042-bfe6-0b33684ef330)
 
 
 #### Gentoo:
@@ -180,5 +184,5 @@ The high accuracy scores and the minimal amount of incorrect predictions as demo
 
 <br>
 
-# **7. Concluding Discussion:**
+## **7. Concluding Discussion:**
 Overall, each model performed extremely well. The nearest-neighbors classifier and the random forest classifier models in particular were able to achieve training scores of 1.0, while the SVC and random forest classifier models only made a single prediction error. However, more data points for each of the penguin species, which would have led to larger training and test sets, would’ve increased the accuracy of each of the models. Having additional columns to select features from would also be helpful. Plus, performing more in-depth feature selection and having the option to use more than just 3 features can lead to better models. In addition, if we can adjust and optimize more than just a single complexity parameter for each model, it’s likely that their performances would also have been improved. 
